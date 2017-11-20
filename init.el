@@ -32,6 +32,10 @@ values."
    dotspacemacs-configuration-layers
    '(
      go
+     (go :variables
+         gofmt-command "goimports"
+         go-tab-width 4)
+
      rust
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
