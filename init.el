@@ -339,6 +339,12 @@ you should place your code here."
   (define-key global-map [?\M-¥] [?\M-\\])
   (define-key global-map [?\C-\M-¥] [?\C-\M-\\])
 
+  ;; move around windows
+  (global-set-key (kbd "C-x <up>") 'windmove-up)
+  (global-set-key (kbd "C-x <down>") 'windmove-down)
+  (global-set-key (kbd "C-x <right>") 'windmove-right)
+  (global-set-key (kbd "C-x <left>") 'windmove-left)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
