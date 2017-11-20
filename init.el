@@ -349,6 +349,7 @@ you should place your code here."
 
   ;; default modes
   (add-hook 'prog-mode-hook 'writeroom-mode)
+  (setq writeroom-width 100)
   (add-hook 'prog-mode-hook 'focus-mode)
 
   )
