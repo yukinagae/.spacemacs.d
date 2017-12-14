@@ -37,6 +37,8 @@ values."
          go-tab-width 4)
 
      rust
+     (rust :variables
+           rust-format-on-save t)
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -67,8 +69,10 @@ values."
    dotspacemacs-additional-packages '(
                                       all-the-icons
                                       quickrun
-                                      writeroom-mode
-                                      focus
+                                      calc
+                                      exec-path-from-shell
+                                      ;; writeroom-mode
+                                      ;; focus
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -151,7 +155,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Fira Code"
-                               :size 14
+                               :size 16
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -277,7 +281,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -347,10 +351,12 @@ you should place your code here."
   (global-set-key (kbd "C-x <right>") 'windmove-right)
   (global-set-key (kbd "C-x <left>") 'windmove-left)
 
-  ;; default modes
-  (add-hook 'prog-mode-hook 'writeroom-mode)
-  (setq writeroom-width 100)
-  (add-hook 'prog-mode-hook 'focus-mode)
+  ;; read env variable
+  ;; see: https://github.com/rust-lang/rust-mode/issues/215
+  (require 'exec-path-from-shell)
+  (exec-path-from-shell-initialize)
+  ;; This is used for rustfmt
+  (exec-path-from-shell-copy-env "DYLD_LIBRARY_PATH")
 
   )
 
