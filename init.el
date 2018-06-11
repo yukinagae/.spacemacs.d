@@ -358,6 +358,10 @@ you should place your code here."
   (global-set-key (kbd "C-l") 'windmove-right)
   (global-set-key (kbd "C-h") 'windmove-left)
 
+  ;; override vim moving begin and end
+  (define-key evil-motion-state-map (kbd "H") #'evil-beginning-of-line)
+  (define-key evil-motion-state-map (kbd "L") #'evil-end-of-line)
+
   ;; read env variable
   ;; see: https://github.com/rust-lang/rust-mode/issues/215
   (require 'exec-path-from-shell)
