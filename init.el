@@ -391,7 +391,8 @@ you should place your code here."
   (add-hook 'cider-mode-hook #'company-mode)
 
   (set-face-foreground 'linum "#444444")
-
+  (set-face-background 'vertical-border "#282828")
+  (set-face-foreground 'vertical-border (face-background 'vertical-border))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
