@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     theming
      csv
      html
      clojure
@@ -158,11 +159,11 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
+                         monokai
                          wombat
                          heroku
                          tangotango
                          alect-dark-alt
-                         monokai
                          spacemacs-dark
                          spacemacs-light
                          )
@@ -174,7 +175,8 @@ values."
                                :size 14
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.1
+                               )
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -338,6 +340,12 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+
+  (setq theming-modifications '(
+                                ;; requires the theming layer
+                                (monokai
+                                 (default :background "#282828")
+                                 )))
   )
 
 (defun dotspacemacs/user-config ()
