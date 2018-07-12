@@ -173,7 +173,7 @@ values."
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Fira Code"
                                :size 14
-                               :weight normal
+                               :weight light
                                :width normal
                                :powerline-scale 1.1
                                )
@@ -389,6 +389,8 @@ you should place your code here."
   ;; company-mode for cider
   (add-hook 'cider-repl-mode-hook #'company-mode)
   (add-hook 'cider-mode-hook #'company-mode)
+
+  (set-face-foreground 'linum "#444444")
 
   )
 
