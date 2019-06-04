@@ -172,6 +172,7 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
+                         dracula
                          monokai
                          wombat
                          heroku
@@ -185,7 +186,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Fira Code"
-                               :size 13
+                               :size 14
                                :weight light
                                :width normal
                                :powerline-scale 1.1
